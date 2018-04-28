@@ -23,7 +23,7 @@ int main(int argc, char **argv)
   ros::NodeHandle n;
 
   tfListener = new tf::TransformListener();
-  tfListener->setExtrapolationLimit(ros::Duration(0.1));
+  tfListener->setExtrapolationLimit(ros::Duration(10));
 
   ros::Subscriber sub = n.subscribe("scan", 1000, laserscanCallback);
    
