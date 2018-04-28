@@ -16,6 +16,7 @@ catkin_make
 ```
 
 ## Usage
+Run the following command on a separate terminal instance.
 ```bash
 rosrun laserscan_to_pointcloud laserscan_to_pointcloud_node
 ```
