@@ -12,7 +12,7 @@ void laserscanCallback(const sensor_msgs::LaserScan::ConstPtr& msg)
 {
   ROS_INFO("Received something! Ahmed is the coolest kid ever");
   sensor_msgs::PointCloud2 cloud;
-  projector.transformLaserScanToPointCloud("base_link", *msg, cloud, *tfListener);
+  projector.transformLaserScanToPointCloud("map", *msg, cloud, *tfListener);
   pointcloud_publisher.publish(cloud);
 }
 
@@ -24,6 +24,7 @@ int main(int argc, char **argv)
 
   tfListener = new tf::TransformListener();
   tfListener->setExtrapolationLimit(ros::Duration(10));
+  listener->waitForTransform("/turtle2", "/carrot1", rospy.Time(), rospy.Duration(4.0))
 
   ros::Subscriber sub = n.subscribe("scan", 1000, laserscanCallback);
    
