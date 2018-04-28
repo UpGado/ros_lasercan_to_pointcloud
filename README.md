@@ -14,3 +14,8 @@ git clone https://github.com/UpGado/ros_lasercan_to_pointcloud.git
 cd ~/catkin_ws
 catkin_make
 ```
+
+## Usage
+```bash
+rosrun laserscan_to_pointcloud laserscan_to_pointcloud_node
+```
